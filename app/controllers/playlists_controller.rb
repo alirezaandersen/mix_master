@@ -10,7 +10,7 @@ class PlaylistsController < ApplicationController
   def create
     @playlist = Playlist.create( playlist_params )
 
-    if @playlist.save 
+    if @playlist.save
     redirect_to @playlist
   else
     render :new
@@ -18,6 +18,10 @@ class PlaylistsController < ApplicationController
   end
 
   def show
+    @playlist = Playlist.find( params[:id] )
+  end
+
+  def edit
     @playlist = Playlist.find( params[:id] )
   end
 
