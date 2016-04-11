@@ -14,6 +14,7 @@ class ArtistsController < ApplicationController
     if @artist.save
       redirect_to @artist
     else
+      flash.now[:danger] = "You fucked up"
       render :new
     end
   end
