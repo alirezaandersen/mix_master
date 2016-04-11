@@ -6,13 +6,13 @@ RSpec.feature "User can edit an artist" do
     updated_artist_name = "Notorious"
 
     visit artist_path(artist)
-    # save_and_open_page
+    # _page
     click_on "Edit"
 
     fill_in "artist_name", with: updated_artist_name
-    # save_and_open_page
+    # _page
     click_on "Update Artist"
-    # save_and_open_page
+    # _page
     expect(page).to have_content updated_artist_name
     expect(page).to have_css("img[src=\"#{artist.image_path}\"]")
   end
